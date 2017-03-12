@@ -1,6 +1,6 @@
 <?php 
 /**
-* 
+* Administra los métodos HTTP GET, POST, PUT y DELETE
 */
 class Request
 {
@@ -10,7 +10,7 @@ class Request
     # code...
   }
 
-  public function Get($uri, $function)
+  public function get($uri, $function)
   {
     
   }

@@ -13,7 +13,7 @@ function load_helpers()
 }
 
 /**
-* Carga el controller dado
+* Retorna el controller si existe el archivo, sino devuelve 'error'
 *
 * @param: string $controller el nombre del controlador
 *
