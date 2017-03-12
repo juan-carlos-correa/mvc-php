@@ -11,9 +11,9 @@ class Controller
   /**
   * Constructor. Ejecuta la vista según el nombre del controlador hijo
   */
-  public function __construct($class = '')
+  public function __construct($class = '', $params = array())
   {
-    $this->view = new View($class);
+    $this->view = new View($class, $params);
   }
 
 }

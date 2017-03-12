@@ -2,10 +2,11 @@
 /** Controlador Home */
 class HomeController extends Controller
 {
-  /** Constructor. Renderiza el template segun el controlador*/
+  /** Constructor. Renderiza el template segun el controlador */
   public function __construct()
   {
-    parent:: __construct(__CLASS__);
+    $values = array("nombre" => 'Juan', 'array' => array(1,2,3,4,5));
+    parent:: __construct(__CLASS__, $values);
   }
 
   /** Método standard del controlador */

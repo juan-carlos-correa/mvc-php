@@ -5,14 +5,20 @@ class View
   // Template html a mostrar
   protected $template;
 
+  protected $controller_name;
+
+  protected $params;
+
   /**
    * Constructor. Ejecuta el método para renderizar el template
    *
    * @param $controller_name string nombre del controlador invocador
    */
-  public function __construct($class)
+  public function __construct($controller_name, $params = array())
   {
-    $this->render($class);
+    $this->controller_name = $controller_name;
+    $this->params = $params;
+    $this->render();
   }
 
   /**
@@ -20,10 +26,10 @@ class View
    *
    * @param $controller_name string nombre del controlador invocador
    */
-  protected function render($controller_name)
+  protected function render()
   {
-    if(class_exists($controller_name)){
-      $html_file_name = str_replace('Controller', '', $controller_name);
+    if(class_exists($this->controller_name)){
+      $html_file_name = str_replace('Controller', '', $this->controller_name);
       $this->template = $this->getContentTemplate($html_file_name);
       echo $this->template;
     }else{
@@ -40,8 +46,9 @@ class View
    */
   protected function getContentTemplate($html_file_name)
   {
-    $html_path = ROOT . '/' . PATH_VIEWS . "$html_file_name/$html_file_name" . '.html';
+    $html_path = ROOT . '/' . PATH_VIEWS . "$html_file_name/$html_file_name" . '.php';
     if(is_file($html_path)){
+      extract($this->params);
       ob_start();
       require($html_path);
       $template = ob_get_contents();
