@@ -4,9 +4,10 @@
 */
 class Model
 {
-  
+  private $db;
+
   public function __construct()
   {
-    # code...
+    $this->db = new Mysql();
   }
 }

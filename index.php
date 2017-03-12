@@ -1,5 +1,5 @@
 <?php 
-require_once 'system/core/config.php';
+require_once 'system/config.php';
 require_once 'system/core/functions.php';
 require_once 'system/core/init.php';
 

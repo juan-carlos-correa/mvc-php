@@ -5,8 +5,8 @@
 spl_autoload_register(function ($class) {
   if(is_file("system/core/$class.php"))
     require "system/core/$class.php";
-  elseif (is_file("system/core/Request/$class.php")) {
-    require "system/core/Request/$class.php";
+  elseif (is_file("system/database/$class/$class.php")) {
+    require "system/database/$class/$class.php";
   }
 });
 
