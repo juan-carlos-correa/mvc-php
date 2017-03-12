@@ -1,25 +1,19 @@
 <?php 
-/**
-* 
-*/
+/** Controlador base del sistema */
 class Controller
 {
-  // Vista a mostrar
+  /** Template html a mostrar */
   protected $template;
+
+  /** Objeto de la clase View */
+  private $view;
   
-  public function __construct()
-  {
-    # code...
-  }
-
   /**
-   * Muestra una vista
-   *
-   * @param $name string nombre del archivo que contiene la vista
-   *
-   */
-  protected function view(string $name)
+  * Constructor. Ejecuta la vista según el nombre del controlador hijo
+  */
+  public function __construct($class = '')
   {
-
+    $this->view = new View($class);
   }
+
 }

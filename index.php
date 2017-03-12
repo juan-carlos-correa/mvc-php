@@ -6,10 +6,12 @@ require_once 'system/core/init.php';
 $router = new Router();
 
 // Valida que el controlador exista, sino retorna el controlador 'Error'
-$controller = validar($router->getController());
+$controllerName = validar($router->getController());
 
-require PATH_CONTROLLERS . "{$controller}/{$controller}Controller.php";
+require PATH_CONTROLLERS . "{$controllerName}/{$controllerName}Controller.php";
 
-$controller .= 'Controller';
+$controllerName .= 'Controller';
 
-new $controller();
+$controller = new $controllerName();
+$method = $router->getMethod();
+$controller->$method();
