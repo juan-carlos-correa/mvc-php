@@ -3,10 +3,12 @@
 * Carga las clases dentro de system/core en tiempo de ejecución
 */
 spl_autoload_register(function ($class) {
-  if(is_file("system/core/$class.php"))
-    require "system/core/$class.php";
-  elseif (is_file("system/database/$class/$class.php")) {
-    require "system/database/$class/$class.php";
+  if(is_file(CORE . "$class.php"))
+    require CORE . "$class.php";
+  elseif (is_file(CORE . "request/$class.php"))
+    require(CORE . "request/$class.php");
+  elseif (is_file(DB . "$class/$class.php")) {
+    require DB . "$class/$class.php";
   }
 });
 

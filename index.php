@@ -15,3 +15,5 @@ $controllerName .= 'Controller';
 $controller = new $controllerName();
 $method = $router->getMethod();
 $controller->$method();
+
+var_dump($router->request->method);

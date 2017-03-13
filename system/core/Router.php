@@ -9,17 +9,17 @@ class Router
   /** 
   * Nombre del controlador a ejecutar
   */
-  protected $controller;
+  public $controller;
 
   /** 
   * Nombre del método a ejecutar
   */
-  protected $method;
+  public $method;
 
   /** 
   * Valor del parámetro enviado por la URI
   */
-  protected $param;
+  public $param;
 
   /** 
   * URI recibida por el cliente

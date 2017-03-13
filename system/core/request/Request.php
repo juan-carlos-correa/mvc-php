@@ -2,7 +2,13 @@
 /** Administra los métodos HTTP GET, POST, PUT y DELETE */
 class Request
 {
+  // Método http
+  public $method;
 
+  public function __construct()
+  {
+    $this->method = REQUEST_METHOD;
+  }
   /**
   * Asocia la uri con el método del controlador a ejecutar
   *
