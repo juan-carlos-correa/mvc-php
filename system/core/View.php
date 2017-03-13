@@ -2,17 +2,20 @@
 /** Vista base del sistema */
 class View
 {
-  // Template html a mostrar
+  /** Template a mostrar */
   protected $template;
 
+  /** Controlador que ejecuta la vista */
   protected $controller_name;
 
+  /** Parámetros a mostrar. Opcional */
   protected $params;
 
   /**
    * Constructor. Ejecuta el método para renderizar el template
    *
    * @param $controller_name string nombre del controlador invocador
+   * @param $params parámetros enviados a ser mostrados en la vista. Opcional
    */
   public function __construct($controller_name, $params = array())
   {
@@ -22,9 +25,7 @@ class View
   }
 
   /**
-   * Muestra una vista
-   *
-   * @param $controller_name string nombre del controlador invocador
+   * Muestra la vista según el controlador que hizo la petición
    */
   protected function render()
   {

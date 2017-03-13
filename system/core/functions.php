@@ -13,10 +13,10 @@ function load_helpers()
 }
 
 /**
-* Retorna el controller si existe el archivo, sino devuelve 'error'
+* Retorna el controller si existe el archivo
 *
 * @param: string $controller el nombre del controlador
-*
+* @return el nombre del controlador a ejecutar
 */
 function validar($controller)
 {
