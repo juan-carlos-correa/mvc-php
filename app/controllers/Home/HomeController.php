@@ -8,18 +8,14 @@ class HomeController extends Controller
   private $model;
 
   /** 
-  * Constructor. Renderiza el template segun el controlador y parametros
-  * 
-  * Los nombres del controlador y la vista deben ser iguales, cada uno con su
-  * propio sufijo (HomeController, HomeModel).
-
-  * Puedes enviar parámetros. Los parámetros deben ser en forma de array.
-  * La vista tendrá acceso a cada índice del array y lo tomará como una variable.
+  * Constructor. Inicializa valores entre ellos
+  *
+  * Puede mostrar la vista e inicializar el modelo, depende del programador
   */
   public function __construct()
   {
     $values = array("nombre" => 'Juan', 'array' => array(1,2,3,4,5));
-    parent:: __construct(__CLASS__, $values);
+    $this->view(__CLASS__, $values);
     $this->model = new HomeModel();
   }
 

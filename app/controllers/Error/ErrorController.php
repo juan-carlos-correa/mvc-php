@@ -5,12 +5,12 @@ class ErrorController extends Controller
   /** Constructor. Renderiza el template segun el controlador*/
   public function __construct()
   {
-    parent:: __construct(__CLASS__);
+    $this->view(__CLASS__);
   }
 
   /** Método standard del controlador */
   public function exec()
   {
-    echo 'Ejecutando metodo';
+    echo 'Ejecutando metodo de Error';
   }
 }
