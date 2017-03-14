@@ -26,6 +26,6 @@ class HomeController extends Controller
   /** Método standard del controlador. Se ejecuta al cargar el controllador*/
   public function exec()
   {
-    echo 'Ejecutando metodo';
+    echo '</br> Ejecutando metodo homeController</br>';
   }
 }

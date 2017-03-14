@@ -4,8 +4,6 @@
 */
 class Router
 {
-  public $request;
-
   /** 
   * Nombre del controlador a ejecutar
   */
@@ -31,7 +29,6 @@ class Router
   */
   public function __construct()
   {
-    $this->request = new Request();
     $this->setUri();
     $this->setParam();
     $this->setMethod();
@@ -43,7 +40,7 @@ class Router
   */
   public function setUri()
   {
-    $this->uri = explode('/', SERVER . REQUEST);
+    $this->uri = explode('/', SERVER . URI);
   }
 
   /** 

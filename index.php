@@ -12,8 +12,9 @@ require PATH_CONTROLLERS . "{$controllerName}/{$controllerName}Controller.php";
 
 $controllerName .= 'Controller';
 
+// se imprime el template
 $controller = new $controllerName();
-$method = $router->getMethod();
-$controller->$method();
 
-var_dump($router->request->method);
+$method = $router->getMethod();
+
+$function = $controller->$method();

@@ -2,13 +2,17 @@
 /** Administra los métodos HTTP GET, POST, PUT y DELETE */
 class Request
 {
-  // Método http
-  public $method;
+  /** Método Http */
+  public $http_method;
+
+  /** instancia de la clase Get */
+  public $get;
 
   public function __construct()
   {
-    $this->method = REQUEST_METHOD;
+    $this->get = new Get();
   }
+
   /**
   * Asocia la uri con el método del controlador a ejecutar
   *
@@ -16,13 +20,8 @@ class Request
   * @param string $method Nombre del método a ejecutar
   *
   */
-  public function get($uri, $method)
+  public function listenRequest()
   {
-    // Primero validar la URI actual con la del parametro
-
-    // Si es igual, obtener el nombre del metodo y parametros si tiene
-
-    // Cómo saber la clase que contiene el metodo?
+    $this->http_method = REQUEST_METHOD;
   }
-
 }

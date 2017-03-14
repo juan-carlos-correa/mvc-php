@@ -2,7 +2,7 @@
 /* Valores de la URI **/
 define('SERVER', $_SERVER['SERVER_NAME']);
 
-define('REQUEST', $_SERVER['REQUEST_URI']);
+define('URI', $_SERVER['REQUEST_URI']);
 
 define('REQUEST_METHOD', $_SERVER['REQUEST_METHOD']);
 
