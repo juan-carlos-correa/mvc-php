@@ -21,4 +21,11 @@ class HomeModel extends Model
     return $listas;
   }
 
+  public function saveUser($name, $email)
+  {
+    $sql = "INSERT INTO `usuarios`(`nombre`, `correo`) VALUES ('$name', '$email')";
+    $result = $this->db->query($sql);
+    return $this->db->affected_rows;
+  }
+
 }

@@ -15,7 +15,7 @@ function load_helpers()
 /**
 * Retorna el controller si existe el archivo
 *
-* @param: string $controller el nombre del controlador
+* @param string $controller el nombre del controlador
 * @return el nombre del controlador a ejecutar
 */
 function validar($controller)
@@ -23,4 +23,16 @@ function validar($controller)
   if(file_exists(PATH_CONTROLLERS . "{$controller}/{$controller}Controller.php")) 
     return $controller;
   return 'Error';
+}
+
+/**
+* Valida que exista el método de una clase
+*
+* @param string $class nombre de la clase
+* @param string $method nombre del método
+*/
+function validateMethod($class, $method)
+{
+  if(!method_exists($class, $method))
+    exit("No existe el método $method en $class");
 }

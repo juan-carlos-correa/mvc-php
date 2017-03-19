@@ -30,4 +30,16 @@ class HomeController extends Controller
     $listas = $this->model->getListas();
     $this->view(__CLASS__, array('listas' => $listas));
   }
+
+  public function saveUser()
+  {
+    if(!validateEmail($_POST['email']))
+      echo "$_POST[email] no es un email válido";
+    $res = $this->model->saveUser($_POST['name'], $_POST['email']);
+    if($res > 0)
+      echo 'Se insertó correctamente';
+    else
+      echo 'No se insertó correctamente :(';
+  }
+
 }

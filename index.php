@@ -30,5 +30,8 @@ $controller = new $controllerName();
 // Obtengo el método obtenido de router
 $method = $router->getMethod();
 
+// Valido el método
+validateMethod($controllerName, $method);
+
 // Ejecuto el método obtenido
 $controller->$method();
