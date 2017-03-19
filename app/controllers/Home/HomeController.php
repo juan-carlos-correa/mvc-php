@@ -7,15 +7,15 @@ class HomeController extends Controller
   /** Objeto de la clase HomeModel */
   private $model;
 
-  /** 
+  /**
   * Constructor. Inicializa valores entre ellos
   *
   * Puede mostrar la vista e inicializar el modelo, depende del programador
   */
   public function __construct()
   {
-    $values = array("nombre" => 'Juan', 'array' => array(1,2,3,4,5));
-    $this->view(__CLASS__, $values);
+    // $values = array("nombre" => 'Juan', 'array' => array(1,2,3,4,5));
+    // $this->view(__CLASS__, $values);
     $this->model = new HomeModel();
   }
 
@@ -23,5 +23,11 @@ class HomeController extends Controller
   public function exec()
   {
     echo '</br> Ejecutando metodo homeController</br>';
+  }
+
+  public function getListas()
+  {
+    $listas = $this->model->getListas();
+    $this->view(__CLASS__, array('listas' => $listas));
   }
 }

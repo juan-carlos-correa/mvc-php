@@ -34,6 +34,6 @@ define('DB_USER', 'root');
 
 define('DB_PASS', '');
 
-define('DB_NAME', 'mi_blog');
+define('DB_NAME', 'tutoriales');
 
 define('DB_CHARSET', 'utf8');

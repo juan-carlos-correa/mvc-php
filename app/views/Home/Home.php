@@ -6,10 +6,12 @@
 </head>
 <body>
 <h1>Esto es Home</h1>
-<h2><?php echo $nombre; ?></h2>
+<h2><?php ?></h2>
 
-<?php foreach ($array as $key => $value) {
-  echo $value;
-} ?>
+<?php
+foreach ($listas as $key => $value) {
+  echo "<p>$value</p>";
+}
+ ?>
 </body>
 </html>

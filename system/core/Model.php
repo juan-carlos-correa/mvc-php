@@ -7,7 +7,7 @@ class Model
   /** 
   * Instancia de la clase Mysql
   */
-  private $db;
+  protected $db;
 
   /** 
   * Constructor. Inicializa la conexón a Mysql

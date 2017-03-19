@@ -9,4 +9,16 @@ class HomeModel extends Model
   {
     parent::__construct();
   }
+
+  public function getListas()
+  {
+    $sql = "SELECT * FROM listas_reproduccion";
+    $result = $this->db->query($sql);
+    while($row = $result->fetch_array(MYSQLI_ASSOC))
+    {
+      $listas[$row['id']] = $row['nombre'];
+    }
+    return $listas;
+  }
+
 }
